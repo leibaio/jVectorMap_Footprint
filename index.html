@@ -1,0 +1,108 @@
+<!--
+
+link : http://www.wujiayi.vip
+name : 吴佳轶 | WuJiaYi
+mail : hello@wujiayi.vip
+微信公众号： 吴佳轶同学 
+
+-->
+
+<html>
+	<head>
+                <meta charset="UTF-8">
+
+		<!--引入jQuery框架-->
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<!--引入jVectorMap库-->
+		<script type="text/javascript" src="js/jquery-jvectormap-1.2.2.min.js"></script>
+		<!--引入样式表-->
+		<link href="js/jquery-jvectormap-1.2.2.css" rel="stylesheet" media="screen">
+
+
+		<!--引入中国地图数据库-->
+		<script type="text/javascript" src="js/jquery-jvectormap-cn-merc-en.js"></script>
+
+		<!--引入美国地图数据库-->
+		<!--script type="text/javascript" src="js/jquery-jvectormap-us-aea.js"></script-->
+		<!--引入世界地图数据库-->
+		<!--script type="text/javascript" src="js/jquery-jvectormap-world-mill.js"></script-->
+
+	</head>
+<body>
+	<!--background-color: 地图背景颜色-->
+	<div id="map" style="background-color:#353535"> </div>
+	<script>
+		$('#map').vectorMap({
+
+			// 此处更改地图
+			map: 'cn_merc_en',   // 中国地图
+			//map: 'us_aea',     // 美国地图
+			//map: 'world_mill', // 世界地图
+
+
+			backgroundColor: 'transparent',
+			zoomMin: 0.9, // 鼠标缩放时的最小比例
+			zoomMax: 2.4, // 鼠标缩放时的最大比例
+			focusOn: {
+				x: 0.55,
+				y: 2,
+				scale: 0.9
+			},
+			regionStyle: {
+				initial: {
+					fill: '#e5e5e5',   // 地图颜色
+					"fill-opacity": 1, // 省份（州）是否隐藏，鼠标滑动时显示; 1：显示，2：隐藏。
+					stroke: 'none',
+					"stroke-width": 0,
+					"stroke-opacity": 1
+				},
+				hover: {
+					fill: '#ccc',  // 鼠标滑动至某省份的高亮颜色。
+					"fill-opacity": 0.8
+				},
+				selected: {
+					fill: 'yellow'
+				},
+				selectedHover: {}
+			},
+			markerStyle: {
+		        initial: {
+		            fill: '#fd8888', // 足迹位置的填充颜色
+		            stroke: '#fff'   // 足迹位置的描边颜色
+		        },
+				hover: {
+					fill: '#fd2020', // 鼠标滑动至足迹位置后的填充颜色
+					stroke: '#fff',  // 鼠标滑动至足迹位置后的描边颜色
+					"fill-opacity": 0.8
+				},
+		    },
+			markers: [ // 足迹位置
+
+				// {latLng: [经度（保留两位小数）, 纬度（保留两位小数）], name: '城市名称'},
+				// 推荐查询经纬度网站：http://www.gpsspg.com/maps.htm
+
+		        {latLng: [32.09, 118.27], name: '全椒，家乡'},
+		        {latLng: [39.90, 116.41], name: '北京，2014.7，中考旅行'},
+		        {latLng: [31.24, 121.50], name: '上海，2017.9至今，我的大学'},
+		        {latLng: [30.27, 118.14], name: '黄山，2017.6，高考旅行'},
+		        {latLng: [31.89, 118.89], name: '南京，李志'},
+		        {latLng: [31.79, 117.31], name: '合肥，2017.8好友、2020.4恋人'},
+		        {latLng: [31.74, 116.54], name: '六安，恋人大学城市'},
+		        {latLng: [30.63, 116.58], name: '天柱山，2017.8，好友之行'},
+		        {latLng: [30.58, 114.03], name: '武汉，2019.6'},
+		        {latLng: [32.39, 119.43], name: '扬州，2019、2020的夏天'},
+		        {latLng: [30.21, 120.21], name: '杭州，2019.7'},
+		        {latLng: [38.47, 106.24], name: '银川，2019.7，大学好友家乡'},
+		        {latLng: [34.23, 108.93], name: '西安，2019.8'},
+		        {latLng: [36.10, 103.72], name: '兰州，2019.8'},
+		        {latLng: [36.65, 101.77], name: '西宁，2019.8'},
+		        {latLng: [30.66, 104.10], name: '成都，2019.8'},
+		        {latLng: [29.40, 106.54], name: '重庆，2019.8'},
+		        {latLng: [28.25, 112.99], name: '长沙，2019.9'},
+		        {latLng: [25.31, 110.30], name: '桂林，2019.9'},
+		        {latLng: [24.34, 109.45], name: '柳州，2019.9'},
+		        {latLng: [31.72, 119.60], name: '常州，2020.11'},
+		    ]
+		});
+	</script>
+</html>
